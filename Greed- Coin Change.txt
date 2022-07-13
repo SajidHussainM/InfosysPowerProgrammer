@@ -1,0 +1,27 @@
+int coinChange(vector<int>& coins, int amount) {
+     int coin=0,ans=0,x=0;
+    sort(coins.begin(),coins.end());
+        for(int i=coins.size()-1;i>=0;i--){
+           if(coins[i]<=amount){
+            coin += amount/coins[i]; 
+            amount -= amount/coins[i]*coins[i];
+            cout<<"Coin Count "<<coin<<" "<<" amount "<<amount<<" "<<" Coin "<<coins[i]<<endl;
+           }
+        }
+        
+        if(amount==0)
+        return coin;
+    
+        else
+            return -1;
+    
+  
+        
+    }
+int main() {
+        vector<int> coins={186,419,83,408,};
+        cout<<coinChange(coins,6249);
+    	return 0;
+ 
+    
+}

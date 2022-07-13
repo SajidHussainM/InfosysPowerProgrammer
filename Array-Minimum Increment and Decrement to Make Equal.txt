@@ -1,0 +1,36 @@
+int equal(vector<int> &a){
+    int n= a.size();
+
+    sort(a.begin(),a.end());
+    int low=0,high=n-1,count=0;
+
+
+        int mid=(low+high)/2;
+    for(int i=low;i<n;i++){
+        while(a[i]!=a[mid]){
+            if(a[i]<a[mid]){
+                a[i]++;
+                count++;
+            }
+            else{
+                a[i]--;
+                count++;
+            }
+        }
+    }
+    for(auto i:a){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    return count;
+   }
+  
+        
+    
+int main() {
+        vector<int> a={ 1, 5, 7, 10 };
+        cout<<equal(a);
+    	return 0;
+ 
+    
+}
