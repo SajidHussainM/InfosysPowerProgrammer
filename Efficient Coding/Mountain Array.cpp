@@ -112,3 +112,73 @@ int mountain(int arr[], int n) {
         return count;
     }
 }
+
+
+
+/*  Java Code Passing all test cases 
+
+import java.util.*;
+import java.io.*;
+
+class MyCode
+{
+public static int mountain(int[] arr, int n){
+if(n<3){
+return -1;
+}
+int count=0;
+if(n%2==0){
+int m2=n/2;
+int m1=m2-1;
+
+if(arr[m1] !=arr[m2]){
+arr[m2]=arr[m1];
+count++;
+}
+for(int i=m1-1;i>=0;i--){
+if(arr[i]!=(arr[i+1]-1)){
+count++;
+arr[i]=(arr[i+1]-1);
+}
+}
+int j=m1-1;
+for(int i=m2+1;i<n;i++){
+if(arr[i]!= arr[j]){
+count++;
+}
+j--;
+}
+
+}
+else{
+int mid=n/2;
+for(int i=mid-1;i>=0;i--){
+if(arr[i]!= (arr[i+1]-1)){
+count++;
+arr[i] = (arr[i+1]-1);
+}
+}
+int j=mid-1;
+for(int i=mid+1;i<n;i++){
+if(arr[i]!= arr[j]){
+count++;
+}
+j--;
+}
+}
+return count;
+}
+
+public static void main(String[] args) throws java.lang.Exception
+{
+Scanner s = new Scanner(System.in);
+int n= s.nextInt();
+int arr[]= new int[n];
+for(int i=0;i<n;i++){
+arr[i]=s.nextInt();
+}
+System.out.print(mountain(arr,n));
+}
+}
+
+*/
