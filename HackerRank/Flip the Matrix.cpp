@@ -1,3 +1,10 @@
+/*
+
+In this problem we can consider that each cell can be replace by 3 elements one on the right same row , one bottom same column and one in the diagonal last,
+so we compare this value with the other three and pick the max, we use the formula matrix.size()-j-1 to get the mirror values.
+
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
